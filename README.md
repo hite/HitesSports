@@ -1,24 +1,17 @@
-# jump_game
+# 希德的运动会
 
-## Project setup
-```
-npm install
-```
+本质是一个抽奖的应用，用途在一堆人里选出 top n 个人来。
+它和普通的抽奖系统的区别在于；
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- 好玩，每个都有一个头像。抽奖过程是一个跳远的过程
+- 高效，每次选出 n 人，当事人空缺时，可选择后补
 
-### Compiles and minifies for production
+## 玩法
+1. 去修改源代码里的人员名单，
+```javascript
+const kUserNames = [
+    "柳*亮",
+    "周*强"
+    ]
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2. 点击屏幕上的 start 按钮，开始一次尝试；
