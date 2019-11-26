@@ -25,15 +25,15 @@ import anime from "animejs/lib/anime.es.js";
 window.anime = anime;
 
 const kUserNames = [
-    "王亮",
-    "周永强",
-    "陈蒙奇",
-    "@马军",
-    "汪建飞",
-    "胡平伍",
-    "胡杰",
-    "裘俊云",
-    "吕冰如"
+    "王*亮",
+    "周*强",
+    "陈*奇",
+    "马*军",
+    "汪*飞",
+    "胡*伍",
+    "胡*杰",
+    "裘*云",
+    "吕*如"
 ];
 
 var objs = kUserNames.map((value, index) => {
