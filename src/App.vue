@@ -2,7 +2,7 @@
     <div id="app">
         <img class="w-bg" src="./assets/caochang.png" />
         <div class="w-container">
-            <input type="button" value="start" v-on:click="start" />
+            <input type="button" value="start" class="w-triggler" v-on:click="start" />
             <div class="w-player" v-for="user in users" v-bind:key="user.no">
                 <img class="avatar" :src="user.avatar" />
                 <div style="height:12px;" />
@@ -33,14 +33,31 @@ const kUserNames = [
     "胡*伍",
     "胡*杰",
     "裘*云",
-    "吕*如"
+    "吕*如",
+    "张*杰",
+    "丁*鑫",
+    "张*蕾",
+    "纪*策",
+    "戴*峰",
+    "徐*俊",
+    "沈*俊",
+    "王*君",
+    "闫*萍",
+    "陈*盼",
+    "黄*凯",
+    "朱*利",
+    "何*捷",
+    "黄*壮",
+    "朱*丞",
+    "王*涛",
+    "江*帆"
 ];
 
 var objs = kUserNames.map((value, index) => {
     return {
         no: index,
         name: value,
-        avatar: require("./assets/avatar/user_" + index + ".png")
+        avatar: require("./assets/avatar/user_" + (index % 17) + ".png")
     };
 });
 console.log(objs);
@@ -124,7 +141,7 @@ export default {
                             no: idx + 1,
                             username: kUserNames[val.index],
                             avatar: require("./assets/avatar/user_" +
-                                val.index +
+                                (val.index % 17) +
                                 ".png")
                         };
                     });
@@ -141,7 +158,17 @@ export default {
     width: 100%;
     position: absolute;
 }
-
+.w-triggler {
+    width: 100px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    position: absolute;
+    left: 48%;
+    top: 20px;
+}
 .w-container {
     position: relative;
 }
@@ -159,14 +186,16 @@ export default {
     flex-direction: column;
     align-items: center;
     align-content: flex-start;
+    overflow-y: scroll;
 }
 
 .w-rank-item {
     display: flex;
-    width: 150px;
+    width: 140px;
     height: 50px;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 5px;
 }
 .rank-item-no {
     height: 20px;
